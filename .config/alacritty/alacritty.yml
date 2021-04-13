@@ -1,0 +1,166 @@
+window:
+
+  dynamic_title: true
+
+  dimensions:
+    columns: 110
+    lines: 35
+
+  # position:
+  # 	x: 0
+  # 	y: 0
+
+  padding:
+    #    x: 10
+    #    y: 20
+    x: 5
+    y: 2
+
+  decorations: none
+
+  startup_mode: Windowed
+
+  dynamic_title: true
+
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+
+################################################
+
+font:
+
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+
+  size: 10.0
+
+  offset:
+    x: 0
+    y: -1
+
+##################################
+
+# colors:
+#   primary:
+#     background: '#292A2B'
+#     foreground: '#E6E6E6'
+# 
+#   normal:
+#     black:   '#292A2B'
+#     red:     '#FF2C6D'
+#     green:   '#19f9d8'
+#     yellow:  '#FFB86C'
+#     blue:    '#45A9F9'
+#     magenta: '#FF75B5'
+#     cyan:    '#67d3c2'
+#     orange:  '#B084EB'
+#     white:   '#E6E6E6'
+#   bright:
+#     black:   '#292A2B'
+#     red:     '#FF2C6D'
+#     green:   '#19f9d8'
+#     yellow:  '#ffcc95'
+#     blue:    '#6FC1FF'
+#     magenta: '#FF9AC1'
+#     cyan:    '#67d3c2'
+#     white:   '#ffffff'
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: '#00010a'
+    # background: '#191919'
+    # background: '#010107'
+    foreground: '#d8dee9'
+
+  cursor:
+    text: '#191919'
+    cursor: '#d8dee9'
+
+  selection:
+    text: '#191919'
+    background: '#d8dee9'
+
+  normal:
+    black:   '#313539'
+    red:     '#b02626'
+    green:   '#40a62f'
+    yellow:  '#f2e635'
+    blue:    '#006BE3'
+    magenta: '#b30ad0'
+    cyan:    '#32d0fc'
+    white:   '#acadb1'
+
+  bright:
+    black:   '#313539'
+    red:     '#b02626'
+    green:   '#40a62f'
+    yellow:  '#f2e635'
+    blue:    '#006BE3'
+    magenta: '#b30ad0'
+    cyan:    '#32d0fc'
+    white:   '#acadb1'
+
+  dim:
+    black:   '#676f78'
+    red:     '#b55454'
+    green:   '#78a670'
+    yellow:  '#faf380'
+    blue:    '#006BE3'
+    magenta: '#c583d0'
+    cyan:    '#8adaf1'
+    white:   '#e0e3e7'
+
+    # background_opacity: 0.9
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+cursor:
+  style: Beam
+  vi_mode_style: Block
+
+mouse:
+  hide_when_typing: true
+
+  url:
+    launcher:
+      program: xdg-open
+      args: []
+    modifiers: Control
+
+mouse_bindings:
+  - { mouse: Middle, action: Copy }
+
+key_bindings:
+  - { key: K,       mods: Alt,    action: ScrollLineUp }
+  - { key: J,       mods: Alt,    action: ScrollLineDown }
+  - { key: U,       mods: Alt,    action: ScrollHalfPageUp }
+  - { key: D,       mods: Alt,    action: ScrollHalfPageDown }
+  - { key: 25,      mods: Alt,    action: Paste }                 # Alt + P → Paste
+  - { key: Y,       mods: Alt,    action: Copy }                  # Alt + Y → Copy
+  - { key: 28,      mods: Alt,    action: SpawnNewInstance }      # Alt + Enter → New instance
+  - { key: 13,      mods: Alt,    action: IncreaseFontSize }      # Alt + = → Increase Font
+  - { key: 12,      mods: Alt,    action: DecreaseFontSize }      # Alt + - → Decrease Font
+
+debug:
+  render_timer: false
+
+  persistent_logging: false
+
+  log_level: Warn
+
+  print_events: false
