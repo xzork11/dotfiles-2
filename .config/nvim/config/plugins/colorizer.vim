@@ -1,3 +1,7 @@
 " For displaying colors
 set termguicolors
-lua require'colorizer'.setup()
+
+let g:Hexokinase_highlighters = ['backgroundfull']
+let g:Hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
+
+autocmd Filetype * :HexokinaseTurnOn

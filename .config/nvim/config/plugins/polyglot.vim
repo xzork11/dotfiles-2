@@ -1,1 +1,1 @@
-let g:polyglot_disabled = ['vimwiki']
+let g:polyglot_disabled = ['vimwiki', 'autoindent']
