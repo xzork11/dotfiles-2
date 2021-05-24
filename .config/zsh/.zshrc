@@ -22,14 +22,14 @@ setopt HIST_IGNORE_SPACE
 # Prompt: SPACESHIP
 
 SPACESHIP_PROMPT_ORDER=(
-	user          # Username section
-	host          # Hostname section
-	dir           # Current directory section
-	git           # Git section (git_branch + git_status)
-	exec_time     # Execution time
-	jobs          # Background jobs indicator
-	exit_code     # Exit code section
-	char          # Prompt character
+    user          # Username section
+    host          # Hostname section
+    dir           # Current directory section
+    git           # Git section (git_branch + git_status)
+    exec_time     # Execution time
+    jobs          # Background jobs indicator
+    exit_code     # Exit code section
+    char          # Prompt character
 )
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
@@ -89,8 +89,8 @@ bindkey "^?" backward-delete-char
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
     case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
+	vicmd) echo -ne '\e[1 q';;      # block
+	viins|main) echo -ne '\e[5 q';; # beam
     esac
 }
 
@@ -98,18 +98,18 @@ function zle-keymap-select {
 autoload -U select-quoted
 zle -N select-quoted
 for m in visual viopp; do
-	for c in {a,i}{\',\",\`}; do
-		bindkey -M $m $c select-quoted
-	done
+    for c in {a,i}{\',\",\`}; do
+	bindkey -M $m $c select-quoted
+    done
 done
 
 # ci{, ci(, ci<, di{, etc
 autoload -U select-bracketed
 zle -N select-bracketed
 for m in visual viopp; do
-	for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-		bindkey -M $m $c select-bracketed
-	done
+    for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+	bindkey -M $m $c select-bracketed
+    done
 done
 
 zle -N zle-keymap-select
@@ -131,7 +131,7 @@ IFS=$'\n' plugins=($(ls $ZSH_PLUGINS_DIR | tr ' ' '\n'));
 
 for plugin in ${plugins[@]}
 do
-	source "$ZSH_PLUGINS_DIR/$plugin/$plugin.zsh"
+    source "$ZSH_PLUGINS_DIR/$plugin/$plugin.zsh"
 done
 
 # =================================================================================
@@ -143,7 +143,7 @@ IFS=$'\n' configFiles=($(ls $SHELL_CONFIG_DIR | tr ' ' '\n'));
 
 for configFile in ${configFiles[@]}
 do
-	source "$SHELL_CONFIG_DIR/$configFile"
+    source "$SHELL_CONFIG_DIR/$configFile"
 done
 
 
@@ -168,9 +168,9 @@ lfcd() {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
     if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+	dir="$(cat "$tmp")"
+	rm -f "$tmp" >/dev/null
+	[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
 
@@ -179,15 +179,15 @@ lfcd() {
 # Directly starts the X-server upon login on tty1
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-	clear
-	#	echo "Select your Window Manager/Desktop Environment"
-	#	echo "1. bspwm"
-	#	echo "2. gnome"
-	#	read "choice?Enter your choice: "
-	#	if [[ "$choice" = "1" ]]; then
+    clear
+    echo "Select your Window Manager/Desktop Environment"
+    echo "1. bspwm"
+    echo "2. csgo"
+    read "choice?Enter your choice: "
+    if [[ "$choice" = "2" ]]; then
 	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm
-	#	else
-	#		pgrep gnome-session || startx $HOME/.config/X11/Xinitrc_gnome
-	#	fi
+    else
+	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm_csgo
+    fi
 fi
 
