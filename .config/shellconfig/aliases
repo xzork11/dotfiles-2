@@ -29,4 +29,4 @@ alias rcloneCopy='rclone -vv --transfers 3 --stats=15s --drive-chunk-size 128M c
 
 alias transmission-daemon='transmission-daemon -w /home/akshettrj/media/torrents'
 
-alias dotfiles='git --git-dir=/home/akshettrj/repos/dotfiles --work-tree=/home/akshettrj'
+alias dotfiles='git --git-dir=/home/akshettrj/coding/repos/dotfiles --work-tree=/home/akshettrj'
