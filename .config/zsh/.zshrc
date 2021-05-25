@@ -185,9 +185,9 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
     echo "2. csgo"
     read "choice?Enter your choice: "
     if [[ "$choice" = "2" ]]; then
-	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm
-    else
 	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm_csgo
+    else
+	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm
     fi
 fi
 
