@@ -71,6 +71,7 @@ type = custom/script
 exec = polybar_battery
 label = "%output%"
 interval = 5
+format-underline = #216408
 
 [module/volume]
 type = custom/ipc
@@ -87,6 +88,7 @@ type = custom/script
 exec = polybar_cpu_temp
 label = %output%
 interval = 2
+format-underline = #E69B43
 
 [module/ethernet]
 type = internal/network
@@ -95,6 +97,7 @@ interval = 1
 
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
+format-connected-underline = #141AD3
 
 label-connected =  🔺 %upspeed% 🔻 %downspeed%
 label-disconnected = 
@@ -105,6 +108,7 @@ interface = wlo1
 interval = 1
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
+format-connected-underline = #141AD3
 
 label-connected = <ramp-signal> 🔺 %upspeed% 🔻 %downspeed%
 label-disconnected = 
@@ -121,6 +125,7 @@ type = internal/mpd
 interval = 1
 
 format-online = <label-time>
+format-online-underline = #A90A16
 
 label-offline = 
 
@@ -166,3 +171,4 @@ type = custom/script
 exec = date "+%d/%m %r"
 interval = 5
 label = 📅 %output%
+format-underline = #2E57FF
