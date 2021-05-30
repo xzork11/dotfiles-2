@@ -70,6 +70,8 @@ cursor-scroll = default
 type = custom/script
 exec = polybar_battery
 label = "%output%"
+scroll-up = sudo increaseBrightness
+scroll-down = sudo decreaseBrightness
 interval = 5
 format-underline = #216408
 
@@ -80,7 +82,7 @@ click-left = beoplay "connect"
 click-right = beoplay "disconnect"
 click-middle = polybar_volume_control "output-mute" $(< /home/akshettrj/.cache/currentSink.txt)
 scroll-up = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) +2%
-scroll-down = polybar_volume_control "output-vol" "$(< /home/akshettrj/.cache/currentSink.txt) -2%
+scroll-down = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) -2%
 label = "%output%"
 initial = 1
 
