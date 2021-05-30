@@ -24,8 +24,6 @@ else
 	symbol='🔋 '
 fi
 
-printf "%s" "$symbol"
-
 if [ "$percent" -lt 20 ]; then
 	printf "%%{F#ed0b0b}"
 	if [ "$mode" = "Discharging," ]; then
@@ -34,9 +32,11 @@ if [ "$percent" -lt 20 ]; then
 	fi
 elif [ "$percent" -lt 50 ]; then
 	printf "%%{F#f2e421}";
+else
+	printf "%%{F#0ABE09}";
 fi
 
-printf "$percent%%"
+printf "$symbol$percent%%"
 
 if [ "$mode" = "Discharging," ] || [ "$mode" = "Charging," ] || [ "$ac_adapt" = "off-line," ]; then
 	echo " ($remaining)"

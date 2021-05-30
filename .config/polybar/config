@@ -14,7 +14,7 @@ format-foreground =
 format-underline = ${colors.primary}
 format-padding = 1
 format-overline =
-format-margin = 0
+format-margin = 1
 format-offset =
 screenchange-reload = true
 
@@ -47,7 +47,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 module-margin-left = 0
-module-margin-right = 1
+module-margin-right = 0
 
 font-0 = JetBrainsMono NF:size=11:antialias=true;
 font-1 = Noto Color Emoji:scale=8:antialias=true;

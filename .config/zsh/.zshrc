@@ -176,6 +176,11 @@ lfcd() {
 
 #================================================
 
+for Dir in /home/akshettrj/.scripts/*
+do
+    export PATH=$PATH:$Dir
+done
+
 # Directly starts the X-server upon login on tty1
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
@@ -190,4 +195,3 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm
     fi
 fi
-
