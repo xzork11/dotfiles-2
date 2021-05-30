@@ -82,6 +82,7 @@ click-middle = polybar_volume_control "output-mute" $(< /home/akshettrj/.cache/c
 scroll-up = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) +2%
 scroll-down = polybar_volume_control "output-vol" "$(< /home/akshettrj/.cache/currentSink.txt) -2%
 label = "%output%"
+initial = 1
 
 [module/cpu]
 type = custom/script
