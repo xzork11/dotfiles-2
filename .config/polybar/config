@@ -34,9 +34,9 @@ fixed-center = true
 bottom = false
 separator =
 
-width = 98%
+width = 99%
 height = 40
-offset-x = 1%
+offset-x = 0.5%
 offset-y = 3
 radius = 10
 
@@ -53,7 +53,7 @@ font-0 = JetBrainsMono NF:size=11:antialias=true;
 font-1 = Noto Color Emoji:scale=8:antialias=true;
 
 modules-left = date bspwm xwindow
-modules-right = mpd wifi ethernet cpu volume battery
+modules-right = mpd wifi ethernet volume battery
 
 tray-position = center
 tray-padding = 1
@@ -76,15 +76,17 @@ interval = 5
 format-underline = #216408
 
 [module/volume]
-type = custom/ipc
-hook-0 = polybar_volume $(< /home/akshettrj/.cache/currentSink.txt)
-click-left = beoplay "connect"
-click-right = beoplay "disconnect"
-click-middle = polybar_volume_control "output-mute" $(< /home/akshettrj/.cache/currentSink.txt)
-scroll-up = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) +2%
-scroll-down = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) -2%
-label = "%output%"
-initial = 1
+type = internal/pulseaudio
+use-ui-max = true
+interval = 2
+format-volume = <ramp-volume> <label-volume>
+label-muted = 🔇 muted
+label-muted-foreground = #666
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+click-middle = beoplay connect
+click-right = beoplay disconnect
 
 [module/cpu]
 type = custom/script
@@ -109,11 +111,11 @@ label-disconnected =
 type = internal/network
 interface = wlo1
 interval = 1
-format-connected = <label-connected>
+format-connected = <ramp-signal> <label-connected>
 format-disconnected = <label-disconnected>
 format-connected-underline = #141AD3
 
-label-connected = <ramp-signal> 🔺 %upspeed% 🔻 %downspeed%
+label-connected = 🔺 %upspeed% 🔻 %downspeed%
 label-disconnected = 
 
 ramp-signal-0 = 😱
@@ -129,6 +131,7 @@ interval = 1
 
 format-online = <label-time>
 format-online-underline = #A90A16
+; format-online-foreground = #0ABE09
 
 label-offline = 
 
@@ -172,6 +175,19 @@ label-separator = |
 [module/date]
 type = custom/script
 exec = date "+%d/%m %r"
-interval = 5
+interval = 1
 label = 📅 %output%
 format-underline = #2E57FF
+
+; Misc
+
+; [module/speakers]
+; type = custom/ipc
+; hook-0 = polybar_volume $(< /home/akshettrj/.cache/currentSink.txt)
+; click-left = beoplay "connect"
+; click-right = beoplay "disconnect"
+; click-middle = polybar_volume_control "output-mute" $(< /home/akshettrj/.cache/currentSink.txt)
+; scroll-up = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) +2%
+; scroll-down = polybar_volume_control "output-vol" $(< /home/akshettrj/.cache/currentSink.txt) -2%
+; label = "%output%"
+; initial = 1
