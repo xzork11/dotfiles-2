@@ -12,5 +12,5 @@ do
 	xdotool key BackSpace
 	xdotool key Return
 	xdotool key super+h
-	sleep 3
+	sleep 1
 done

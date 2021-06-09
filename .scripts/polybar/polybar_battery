@@ -39,5 +39,5 @@ fi
 printf "$symbol$percent%%"
 
 if [ "$mode" = "Discharging," ] || [ "$mode" = "Charging," ] || [ "$ac_adapt" = "off-line," ]; then
-	echo " ($remaining)"
+	echo " ($remaining)" | sed 's/charging/ch./g'
 fi

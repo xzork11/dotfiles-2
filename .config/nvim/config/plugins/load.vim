@@ -15,11 +15,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}		" COC Completion Love
 Plug 'mattn/calendar-vim'													" Calender Plugin can be used with vimwiki
 Plug 'tjdevries/coc-zsh'													" CoC Zsh plugin
 Plug 'lervag/vimtex'															" Completions and syntax for Latex
+
 " Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'tpope/vim-sleuth'														" Indentation Detector
 Plug 'tpope/vim-repeat'														" So that we can repeat some plugins
 Plug 'Yggdroot/indentLine'												" Show indentation
+
+" Preview for HTML
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 call plug#end()
 

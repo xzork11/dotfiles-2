@@ -104,8 +104,8 @@ format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 format-connected-underline = #141AD3
 
-label-connected =  🔺 %upspeed% 🔻 %downspeed%
-label-disconnected = 
+label-connected = 🧵 🔺 %upspeed% 🔻 %downspeed%
+label-disconnected =
 
 [module/wifi]
 type = internal/network
@@ -116,7 +116,7 @@ format-disconnected = <label-disconnected>
 format-connected-underline = #141AD3
 
 label-connected = 🔺 %upspeed% 🔻 %downspeed%
-label-disconnected = 
+label-disconnected =
 
 ramp-signal-0 = 😱
 ramp-signal-1 = 😠
@@ -129,17 +129,17 @@ ramp-signal-5 = 😈
 type = internal/mpd
 interval = 1
 
-format-online = <label-time>
+format-online = 🎶 <label-time>
 format-online-underline = #A90A16
 ; format-online-foreground = #0ABE09
 
-label-offline = 
+label-offline =
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
-format-underline = 
+format-underline =
 format-background = ${colors.background}
 format-padding =
 
