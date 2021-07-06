@@ -1,8 +1,6 @@
 [[ $- != *i* ]] && return
 
-# sudo cpupower frequency-set --max 3.2GHz > /dev/null
-
-neofetch
+# neofetch
 
 autoload -U colors && colors	# Load colors
 
@@ -125,25 +123,22 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 #PLUGINS
 
-export ZSH_PLUGINS_DIR=~/.config/pluginsZsh/
+export ZSH_PLUGINS_DIR=/home/akshettrj/.config/pluginsZsh
 
-IFS=$'\n' plugins=($(ls $ZSH_PLUGINS_DIR | tr ' ' '\n'));
-
-for plugin in ${plugins[@]}
+for customPlugin in $ZSH_PLUGINS_DIR/*
 do
-    source "$ZSH_PLUGINS_DIR/$plugin/$plugin.zsh"
+    source "$customPlugin/main.zsh"
 done
+
 
 # =================================================================================
 # GENERAL SHELL CONFIGS
 
-export SHELL_CONFIG_DIR=~/.config/shellconfig/
+export SHELL_CONFIG_DIR=~/.config/shellconfig
 
-IFS=$'\n' configFiles=($(ls $SHELL_CONFIG_DIR | tr ' ' '\n'));
-
-for configFile in ${configFiles[@]}
+for customConfig in $SHELL_CONFIG_DIR/*
 do
-    source "$SHELL_CONFIG_DIR/$configFile"
+    source "$customConfig"
 done
 
 
@@ -151,7 +146,7 @@ done
 
 # Some Key bindings
 bindkey '^R' history-incremental-pattern-search-backward
-bindkey -s '^s' " fixcur\n keyboardFix\n"
+bindkey -s '^s' " fixcur\n keyboardFix\nfix_wacom\n"
 bindkey -s '^l' " clear\n"
 bindkey -s '^f' " fzf\n"
 WORDCHARS=''
@@ -181,17 +176,19 @@ do
     export PATH=$PATH:$Dir
 done
 
+/home/akshettrj/.scripts/sound/updatePulseAudioSink 2>/dev/null
+
 # Directly starts the X-server upon login on tty1
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
     clear
-    echo "Select your Window Manager/Desktop Environment"
-    echo "1. bspwm"
-    echo "2. csgo"
-    read "choice?Enter your choice: "
-    if [[ "$choice" = "2" ]]; then
-	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm_csgo
-    else
-	pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm
-    fi
+    # echo "Select your Window Manager/Desktop Environment"
+    # echo "1. bspwm"
+    # echo "2. csgo"
+    # read "choice?Enter your choice: "
+    # if [[ "$choice" = "2" ]]; then
+	# pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm_csgo
+    # else
+    pgrep bspwm || startx $HOME/.config/X11/Xinitrc_bspwm
+    # fi
 fi

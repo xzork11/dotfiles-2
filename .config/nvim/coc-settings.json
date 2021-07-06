@@ -7,6 +7,9 @@
     "clangd.semanticHighlighting": true,
 
     // Explorer Config
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": "content",
+    "explorer.git.enable": true,
     "explorer.keyMappings.global": {
         "i": false, // cancel default mapkey
 

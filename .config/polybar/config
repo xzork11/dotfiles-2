@@ -40,7 +40,7 @@ offset-x = 0.5%
 offset-y = 3
 radius = 15
 
-underline-size = 3
+underline-size = 4
 overline-size = 0
 
 background = ${colors.background}
@@ -53,7 +53,7 @@ font-0 = JetBrainsMono NF:size=11:antialias=true;
 font-1 = Noto Color Emoji:scale=8:antialias=true;
 
 modules-left = date bspwm xwindow
-modules-right = mpd wifi ethernet volume battery
+modules-right = mpd wifi ethernet mic volume battery
 
 tray-position = center
 tray-padding = 1
@@ -88,6 +88,15 @@ ramp-volume-1 = 🔉
 ramp-volume-2 = 🔊
 click-middle = beoplay connect
 click-right = beoplay disconnect
+
+[module/mic]
+type = custom/script
+exec = ~/.scripts/polybar/polybar_mic
+tail = true
+click-left = ~/.scripts/polybar/polybar_mic --toggle &
+scroll-up = ~/.scripts/polybar/polybar_mic --increase &
+scroll-down = ~/.scripts/polybar/polybar_mic --decrease &
+label = "🎙️ %output% "
 
 [module/cpu]
 type = custom/script
@@ -138,7 +147,7 @@ label-offline =
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:40:...%
 
 format-underline =
 format-background = ${colors.background}
@@ -175,7 +184,7 @@ label-separator = |
 
 [module/date]
 type = custom/script
-exec = date "+%d/%m %r"
+exec = date "+%d/%m | %r"
 interval = 1
 label = 📅 %output%
 format-underline = #2E57FF

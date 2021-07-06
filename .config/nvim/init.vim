@@ -6,3 +6,5 @@ source ~/.config/nvim/config/mappings/configs.vim
 source ~/.config/nvim/config/mappings/normal.vim
 source ~/.config/nvim/config/mappings/command.vim
 source ~/.config/nvim/config/mappings/visual.vim
+
+source ~/.config/nvim/config/languages/html.vim
