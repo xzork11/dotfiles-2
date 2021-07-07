@@ -1,6 +1,6 @@
 [[ $- != *i* ]] && return
 
-# neofetch
+neofetch
 
 autoload -U colors && colors	# Load colors
 

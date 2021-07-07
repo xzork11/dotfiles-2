@@ -25,6 +25,9 @@ Plug 'Yggdroot/indentLine'												" Show indentation
 " Preview for HTML
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
+" Inbuilt LSP
+" Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
 
 colorscheme codedark 	" set colorscheme

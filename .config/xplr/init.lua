@@ -1,3 +1,4 @@
+version = "0.14.4"
 -- You need to define the script version for compatibility check.
 -- See https://github.com/sayanarijit/xplr/wiki/Upgrade-Guide.
 --
@@ -414,10 +415,10 @@ xplr.config.layouts.builtin.default = {
             vertical_margin = nil,
             constraints = {
               {
-                Percentage = 50
+                Percentage = 10
               },
               {
-                Percentage = 50
+                Percentage = 90
               },
             }
           },
@@ -1283,7 +1284,7 @@ xplr.config.modes.builtin.action = {
         messages = {
           {
             Call = {
-              command = "bash",
+              command = "zsh",
               args = {"-i"}
             }
           },
