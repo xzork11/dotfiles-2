@@ -11,9 +11,9 @@ Plug 'vim-airline/vim-airline'										" Airline status bar
 Plug 'lambdalisue/nerdfont.vim'										" NerdFonts
 Plug 'tpope/vim-surround'													" Manipulate brackets, quotes etc.
 Plug 'ryanoasis/vim-devicons'											" Add Devicons
-Plug 'neoclide/coc.nvim', {'branch': 'release'}		" COC Completion Love
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}		" COC Completion Love
 Plug 'mattn/calendar-vim'													" Calender Plugin can be used with vimwiki
-Plug 'tjdevries/coc-zsh'													" CoC Zsh plugin
+" Plug 'tjdevries/coc-zsh'													" CoC Zsh plugin
 Plug 'lervag/vimtex'															" Completions and syntax for Latex
 
 " Markdown Preview
@@ -23,10 +23,10 @@ Plug 'tpope/vim-repeat'														" So that we can repeat some plugins
 Plug 'Yggdroot/indentLine'												" Show indentation
 
 " Preview for HTML
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+" Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 " Inbuilt LSP
-" Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -37,3 +37,4 @@ source ~/.config/nvim/config/plugins/vimwiki.vim
 source ~/.config/nvim/config/plugins/airline.vim
 source ~/.config/nvim/config/plugins/markdownpreview.vim
 source ~/.config/nvim/config/plugins/indentLine.vim
+source ~/.config/nvim/config/plugins/inbuilt-lsp.vim
