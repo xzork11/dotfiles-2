@@ -23,7 +23,7 @@ margin-top = 0
 margin-bottom = 0
 
 [bar/bar]
-monitor = eDP-1-1
+monitor = eDP1
 monitor-fallback =
 monitor-strict = false
 monitor-exact = true

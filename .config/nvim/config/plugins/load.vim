@@ -28,6 +28,8 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 " Inbuilt LSP
 " Plug 'neovim/nvim-lspconfig'
 
+" Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 colorscheme codedark 	" set colorscheme

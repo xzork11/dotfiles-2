@@ -176,8 +176,6 @@ do
     export PATH=$PATH:$Dir
 done
 
-/home/akshettrj/.scripts/sound/updatePulseAudioSink 2>/dev/null
-
 # Directly starts the X-server upon login on tty1
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
